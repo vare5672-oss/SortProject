@@ -26,7 +26,6 @@ public class Main {
             System.out.println(num);
         }
 
-        // Закрываем сканнер (хороший тон)
         scanner.close();
     }
 }
