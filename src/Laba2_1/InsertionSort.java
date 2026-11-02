@@ -1,7 +1,7 @@
 package Laba2_1;
 
 import java.util.List;
-
+import common.Sorting;
 public class InsertionSort implements Sorting<Integer> {
 
     @Override

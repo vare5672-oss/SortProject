@@ -1,5 +1,5 @@
 package Laba2_2;
-
+import common.Sorting;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

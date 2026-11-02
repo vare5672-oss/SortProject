@@ -1,5 +1,5 @@
 package Laba2_3;
-
+import common.Sorting;
 public class Student implements Comparable<Student> {
     private final String name;
     private final int age;

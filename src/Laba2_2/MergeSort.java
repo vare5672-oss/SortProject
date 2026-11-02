@@ -1,5 +1,5 @@
 package Laba2_2;
-
+import common.Sorting;
 import java.util.List;
 
 public class MergeSort implements Sorting<Integer> {
