@@ -9,7 +9,7 @@ public class Main {
         sc.close();
 
         double low = 1.0;
-        double high = 100000.0;
+        double high = 200000.0;
 
         for (int i = 0; i < 100; i++) {
             double mid = (low + high) / 2.0;
