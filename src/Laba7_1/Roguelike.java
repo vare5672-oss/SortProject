@@ -14,7 +14,9 @@ public class Roguelike {
         for (String line : lines) {
             line = line.trim();
             if (line.isEmpty()) continue;
+
             String[] parts = line.split(";");
+
             int[] row = new int[parts.length];
             for (int j = 0; j < parts.length; j++) {
                 row[j] = Integer.parseInt(parts[j].trim());
@@ -26,30 +28,30 @@ public class Roguelike {
         int m = gridList.get(0).length;
         int[][] grid = gridList.toArray(new int[n][]);
 
-        long[][] dp = new long[n][m];
-        byte[][] from = new byte[n][m];
+        long[][] dp = new long[n][m]; //максимальная сумма монет в клетке
+        byte[][] from = new byte[n][m];//откуда пришли
 
         dp[0][0] = grid[0][0];
 
-
+        //заполнение первой строки
         for (int j = 1; j < m; j++) {
             dp[0][j] = dp[0][j - 1] + grid[0][j];
             from[0][j] = 1;
         }
-
+        //заполнение первого столбца
         for (int i = 1; i < n; i++) {
             dp[i][0] = dp[i - 1][0] + grid[i][0];
             from[i][0] = 0;
         }
-
+        //заполнение остальных клеток
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < m; j++) {
                 if (dp[i - 1][j] >= dp[i][j - 1]) {
                     dp[i][j] = dp[i - 1][j] + grid[i][j];
-                    from[i][j] = 0;
+                    from[i][j] = 0; //пришли снизу D
                 } else {
                     dp[i][j] = dp[i][j - 1] + grid[i][j];
-                    from[i][j] = 1;
+                    from[i][j] = 1;// пришли справа R
                 }
             }
         }
